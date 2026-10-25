@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'none'; img-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer"><title>密钥加密 · 群聊 Bot</title><link rel="stylesheet" href="style.css"></head>
+<body><main><header><span class="badge">群聊 BOT · 密钥交接</span><h1>把密钥加密后，<br>再发给管理员。</h1><p class="intro">粘贴密钥 → 生成密文 → QQ 私聊发送</p></header>
+<section class="note"><strong>先确认这件事</strong><p>本页面在你的浏览器内加密，不主动上传或保存你填写的密钥。管理员收到密文后，可以解密并使用你的密钥。请仅在信任管理员时继续。</p></section>
+<section class="card"><label for="secret">1. 粘贴你的 API Key</label><input id="secret" type="password" placeholder="在这里粘贴 API Key" autocomplete="off" spellcheck="false" autocapitalize="off" maxlength="8192"><p class="hint">建议使用专门为这个 Bot 创建的 Key。</p><button id="encrypt" type="button">2. 生成加密密文</button>
+<label for="result" class="result-label">3. 将密文发给管理员</label><textarea id="result" readonly rows="5" placeholder="加密结果会出现在这里"></textarea><div class="actions"><button id="copy" type="button" disabled>复制密文</button><button id="download" class="secondary" type="button" disabled>下载密文文件</button></div><p id="status" role="status" aria-live="polite"></p></section>
+<footer>QQ 消息过长时，可发送下载的密文文件。<br>收件公钥标识：<code id="fingerprint">未配置</code><br>公钥标识可与管理员核对；它不是你的 API Key。</footer></main><script type="module" src="app.mjs"></script></body></html>
